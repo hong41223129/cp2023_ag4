@@ -1,4 +1,5 @@
 [tool.poetry]
+<<<<<<< HEAD
 name = "python-template"
 version = "0.1.0"
 description = ""
@@ -6,10 +7,22 @@ authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
 python = ">=3.10.0,<3.11"
+=======
+name = "repl-nix-cp2023ag4"
+version = "0.1.0"
+description = ""
+authors = ["Replit user <<>>"]
+readme = "README.md"
+packages = [{include = "repl_nix_cp2023ag4"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+>>>>>>> 0bfbc06e4a10ee6641c409785ee9b8b357b20cdf
 flask = "^3.0.0"
 gevent = "^23.9.1"
 waitress = "^2.1.2"
 
+<<<<<<< HEAD
 [tool.pyright]
 # https://github.com/microsoft/pyright/blob/main/docs/configuration.md
 useLibraryCodeForTypes = true
@@ -23,3 +36,9 @@ ignore = ['W291', 'W292', 'W293']
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+=======
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+>>>>>>> 0bfbc06e4a10ee6641c409785ee9b8b357b20cdf
