@@ -4,6 +4,8 @@ __pycache__/
 venv/
 .pythonlibs
 config/config
+.replit
+replit.nix
 # LaTeX specific
 *.aux
 *.log
