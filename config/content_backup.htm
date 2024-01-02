@@ -45,7 +45,7 @@
 <p>for (int i = 0; i &lt; 10; i++) {<br/> double angle = M_PI / 2 + i * 2 * M_PI / 10 + rotation_angle;<br/> int radius = (i % 2 == 0) ? size : size / 2;<br/> points[i].x = x + radius * cos(angle);<br/> points[i].y = y + radius * sin(angle);<br/> }</p>
 <p>// 用指定的颜色填充星星<br/> gdImageFilledPolygon(img, points, 10, color);<br/>}</p>
 <p><img alt="" height="313" src="/images/usa_flag.png" width="595"/></p>
-<h1>日本</h1>
+<h2>日本</h2>
 <p>#include &lt;stdio.h&gt;<br/>#include &lt;gd.h&gt;</p>
 <p>int main() {<br/>int width = 250; // 日本国旗的宽度<br/>int height = 150; // 日本国旗的高度</p>
 <p>gdImagePtr img = gdImageCreateTrueColor(width, height);</p>
