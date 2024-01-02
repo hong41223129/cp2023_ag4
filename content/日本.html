@@ -2,7 +2,7 @@
         <head>
         <title>cpag4</title>
         <meta charset="utf-8">
-<meta property="head" content="H1">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -142,19 +142,19 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content"> <a href='國旗.html'>Next</a> >> 國旗<br /><h1>About</h1>
-<p><a href="https://github.com/mdecycu/cmsite"> https://github.com/mdecycu/cmsite</a></p>
-<p><a href="https://github.com/hong41223129/cp2023_ag4">https://github.com/hong41223129/cp2023_ag4</a>(倉儲)</p>
-<p>全體組員</p>
-<p>41223129<a href="https://github.com/hong41223129/cp2023">https://github.com/hong41223129/cp2023</a></p>
-<p>41223110<a href="https://github.com/41223110/cp2023">https://github.com/41223110/cp2023</a></p>
-<p>41223134<a href="https://github.com/41223134/cp2023">https://github.com/41223134/cp2023</a></p>
-<p>41223137<a href="https://github.com/41223137/cp2023">https://github.com/41223137/cp2023</a></p>
-<p>41223138<a href="https://github.com/41223138/cp2023">https://github.com/41223138/cp2023</a></p>
-<p>41223130<a href="https://github.com/joeisme1208/cp2023">https://github.com/joeisme1208/cp2023</a></p>
-<p>41223139<a href="https://github.com/weikai557/cp2023">https://github.com/weikai557/cp2023</a></p>
-<p>使用replit連接團體倉儲時請修改為Python</p>
-<br /> <a href='國旗.html'>Next</a> >> 國旗</div>
+    <div id="tipue_search_content">美國 << <a href='美國.html'>Previous</a> <a href='gd.html'>Next</a> >> gd<br /><h1>日本</h1>
+<p>#include &lt;stdio.h&gt;<br/>#include &lt;gd.h&gt;</p>
+<p>int main() {<br/>int width = 250; // 日本国旗的宽度<br/>int height = 150; // 日本国旗的高度</p>
+<p>gdImagePtr img = gdImageCreateTrueColor(width, height);</p>
+<p>// 分配白色<br/>int white = gdImageColorAllocate(img, 255, 255, 255);<br/>gdImageFill(img, 0, 0, white);</p>
+<p>// 分配红色<br/>int red = gdImageColorAllocate(img, 255, 0, 0);</p>
+<p>// 启用抗锯齿<br/>gdImageSetAntiAliased(img, red);</p>
+<p>// 绘制红色圆圈<br/>int circle_radius = 80; // 减小半径以使边缘更圆润<br/>int circle_x = width / 2;<br/>int circle_y = height / 2;<br/>gdImageFilledEllipse(img, circle_x, circle_y, circle_radius, circle_radius, red);</p>
+<p>FILE *outputFile = fopen("japan_flag_smooth.png", "wb");<br/>if (outputFile == NULL) {<br/>fprintf(stderr, "Error opening the output file.\n");<br/>return 1;<br/>}</p>
+<p>gdImagePngEx(img, outputFile, 9);<br/>fclose(outputFile);<br/>gdImageDestroy(img);</p>
+<p>return 0;<br/>}</p>
+<p><img alt="" height="303" src="./../images/japan_flag_smooth.png" width="505"/></p>
+<br />美國 << <a href='美國.html'>Previous</a> <a href='gd.html'>Next</a> >> gd</div>
         
     <!-- footer -->
       <div class="container">
