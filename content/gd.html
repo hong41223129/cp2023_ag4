@@ -2,6 +2,7 @@
         <head>
         <title>cpag4</title>
         <meta charset="utf-8">
+<meta property="head" content="H1">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -141,19 +142,37 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content"> <a href='gd.html'>Next</a> >> gd<br /><h1>About</h1>
-<p><a href="https://github.com/mdecycu/cmsite"> https://github.com/mdecycu/cmsite</a></p>
-<p><a href="https://github.com/hong41223129/cp2023_ag4">https://github.com/hong41223129/cp2023_ag4</a>(倉儲)</p>
-<p>全體組員</p>
-<p>41223129<a href="https://github.com/hong41223129/cp2023">https://github.com/hong41223129/cp2023</a></p>
-<p>41223110<a href="https://github.com/41223110/cp2023">https://github.com/41223110/cp2023</a></p>
-<p>41223134<a href="https://github.com/41223134/cp2023">https://github.com/41223134/cp2023</a></p>
-<p>41223137<a href="https://github.com/41223137/cp2023">https://github.com/41223137/cp2023</a></p>
-<p>41223138<a href="https://github.com/41223138/cp2023">https://github.com/41223138/cp2023</a></p>
-<p>41223130<a href="https://github.com/joeisme1208/cp2023">https://github.com/joeisme1208/cp2023</a></p>
-<p>41223139<a href="https://github.com/weikai557/cp2023">https://github.com/weikai557/cp2023</a></p>
-<p>使用replit連接團體倉儲時請修改為Python</p>
-<br /> <a href='gd.html'>Next</a> >> gd</div>
+    <div id="tipue_search_content">About << <a href='About.html'>Previous</a> <a href='個人學習心得.html'>Next</a> >> 個人學習心得<br /><h1>gd</h1>
+<p></p>
+<p>#include &lt;stdio.h&gt;<br/>#include &lt;gd.h&gt;<br/>#include &lt;math.h&gt;</p>
+<p>int main() {<br/> int width = 800;<br/> int height = 600;</p>
+<p>gdImagePtr img = gdImageCreateTrueColor(width, height);<br/> gdImageAlphaBlending(img, 0);</p>
+<p>FILE *outputFile = fopen("hellogd.png", "wb");<br/> if (outputFile == NULL) {</p>
+<p>fprintf(stderr, "Error opening the output file.\n");</p>
+<p>return 1;<br/> }</p>
+<p>int red = gdImageColorAllocate(img, 255, 0, 0);<br/> int blue = gdImageColorAllocate(img, 0, 0, 255);<br/> int black = gdImageColorAllocate(img, 0, 0, 0);<br/> int white = gdImageColorAllocate(img, 255, 255, 255);<br/> // 長方形塗色<br/> gdImageFilledRectangle(img, 0, 0, width, height, white);<br/> gdImageFilledRectangle(img, 0, 0, (int)width/4, (int)height/4, blue);<br/> // 橢圓形塗色<br/> gdImageFilledEllipse(img, (int)width*3/4, (int)height/4, (int)width/4, (int)width/4, red);<br/> // 橢圓形畫線<br/> gdImageEllipse(img, (int)width*3/4, (int)height*3/4, (int)width/4, (int)width/4, red);<br/> // 畫直線<br/> gdImageLine(img, (int)width/2, (int)height/2, (int)width/2, (int)height/2 + 100, blue);</p>
+<p>// 多邊形畫線<br/> gdPoint points[4];<br/> points[0].x = (int)width/4;<br/> points[0].y = (int)height*3/4;<br/> points[1].x = points[0].x + 100;<br/> points[1].y = points[0].y;<br/> points[2].x = points[1].x;<br/> points[2].y = points[1].y + 100;<br/> points[3].x = points[2].x - 100;<br/> points[3].y = points[2].y;<br/> gdImagePolygon(img, points, 4, black);</p>
+<p>// 多邊形塗色<br/> gdPoint points2[4];<br/> points2[0].x = (int)width/3;<br/> points2[0].y = (int)height/2;<br/> points2[1].x = points2[0].x + 100;<br/> points2[1].y = points2[0].y;<br/> points2[2].x = points2[1].x;<br/> points2[2].y = points2[1].y + 100;<br/> points2[3].x = points2[2].x - 150;<br/> points2[3].y = points2[2].y;<br/> gdImageFilledPolygon(img, points2, 4, red);</p>
+<p>gdImagePngEx(img, outputFile, 9);<br/> fclose(outputFile);<br/> gdImageDestroy(img);<br/> return 0;<br/>}</p>
+<p><img alt="" height="422" src="./../images/hellogd.png" width="563"/></p>
+<p>#include &lt;stdio.h&gt;<br/>#include &lt;gd.h&gt;<br/>#include &lt;math.h&gt;</p>
+<p>// Declare the rotation function<br/>void rotateFilledPolygon(int x_orig, int y_orig, double rotation_ang, gdPoint *points, int num_points) {<br/> int i;<br/> double angle_rad = rotation_ang * M_PI / 180.0;</p>
+<p>for (i = 0; i &lt; num_points; i++) {<br/> int x = points[i].x - x_orig;<br/> int y = points[i].y - y_orig;</p>
+<p>points[i].x = x_orig + (int)(x * cos(angle_rad) - y * sin(angle_rad));<br/> points[i].y = y_orig + (int)(x * sin(angle_rad) + y * cos(angle_rad));<br/> }<br/>}</p>
+<p>int main() {<br/> int width = 800;<br/> int height = 600;</p>
+<p>gdImagePtr img = gdImageCreateTrueColor(width, height);<br/> gdImageAlphaBlending(img, 0);</p>
+<p>FILE *outputFile = fopen("hellogd2.png", "wb");<br/> if (outputFile == NULL) {<br/> fprintf(stderr, "Error opening the output file.\n");<br/> return 1;<br/> }</p>
+<p>int red = gdImageColorAllocate(img, 255, 0, 0);<br/> int blue = gdImageColorAllocate(img, 0, 0, 255);<br/> int black = gdImageColorAllocate(img, 0, 0, 0);<br/> int white = gdImageColorAllocate(img, 255, 255, 255);</p>
+<p>gdImageFilledRectangle(img, 0, 0, width, height, white);<br/> gdImageFilledRectangle(img, 0, 0, (int)width / 4, (int)height / 4, blue);</p>
+<p>gdImageFilledEllipse(img, (int)width * 3 / 4, (int)height / 4, (int)width / 4, (int)width / 4, red);<br/> gdImageEllipse(img, (int)width * 3 / 4, (int)height * 3 / 4, (int)width / 4, (int)width / 4, red);<br/> gdImageLine(img, (int)width / 2, (int)height / 2, (int)width / 2, (int)height / 2 + 100, blue);</p>
+<p>gdPoint points[4];<br/> points[0].x = (int)width / 4;<br/> points[0].y = (int)height * 3 / 4;<br/> points[1].x = points[0].x + 100;<br/> points[1].y = points[0].y;<br/> points[2].x = points[1].x;<br/> points[2].y = points[1].y + 100;<br/> points[3].x = points[2].x - 100;<br/> points[3].y = points[2].y;</p>
+<p>// Call the rotation function multiple times<br/> for (int i = 0; i &lt; 4; i++) {<br/> rotateFilledPolygon((int)width / 4 + 50, (int)height * 3 / 4 + 50, 30.0, points, 4);<br/> gdImagePolygon(img, points, 4, black);<br/> }</p>
+<p>gdPoint points2[4];<br/> points2[0].x = (int)width / 3;<br/> points2[0].y = (int)height / 2;<br/> points2[1].x = points2[0].x + 100;<br/> points2[1].y = points2[0].y;<br/> points2[2].x = points2[1].x;<br/> points2[2].y = points2[1].y + 100;<br/> points2[3].x = points2[2].x - 150;<br/> points2[3].y = points2[2].y;</p>
+<p>// Call the rotation function multiple times<br/> for (int i = 0; i &lt; 12; i++) {<br/> //rotateFilledPolygon((int)width / 3 + 50, (int)height / 2 + 50, 30.0, points2, 4);<br/> rotateFilledPolygon(500, 200, 30.0, points2, 4);<br/> gdImageFilledPolygon(img, points2, 4, red);<br/> }</p>
+<p>gdImagePngEx(img, outputFile, 9);<br/> fclose(outputFile);<br/> gdImageDestroy(img);</p>
+<p>return 0;<br/>}</p>
+<p><img alt="" height="420" src="./../images/hellogd2.png" width="560"/></p>
+<br />About << <a href='About.html'>Previous</a> <a href='個人學習心得.html'>Next</a> >> 個人學習心得</div>
         
     <!-- footer -->
       <div class="container">
